@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\domain\FiapSrvUser.Domain.csproj" />
+    <ProjectReference Include="../FiapSrvUser.Domain/FiapSrvUser.Domain.csproj" />
   </ItemGroup>
 
 </Project>

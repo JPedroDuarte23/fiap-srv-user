@@ -31,9 +31,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
-    <ItemGroup>
-	    <ProjectReference Include="..\FiapSrvUser.Application\FiapSrvUser.Application.csproj" />
-	    <ProjectReference Include="..\FiapSrvUser.Infrastructure\FiapSrvUser.Infrastructure.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FiapSrvUser.Application\FiapSrvUser.Application.csproj" />
+    <ProjectReference Include="..\FiapSrvUser.Infrastructure\FiapSrvUser.Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>

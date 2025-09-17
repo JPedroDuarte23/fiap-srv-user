@@ -6,8 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>FiapSrvUser</RootNamespace>
     	<GenerateDocumentationFile>True</GenerateDocumentationFile>
-	<ExcludeFromCodeCoverage>true</ExcludeFromCodeCoverage>
-	<ExcludeByFile>$(MSBuildProjectDirectory)/Program.cs</ExcludeByFile>
+	  <ExcludeFromCodeCoverage>true</ExcludeFromCodeCoverage>
+	    <ExcludeByFile>./Program.cs</ExcludeByFile>
   </PropertyGroup>
 
 	<ItemGroup>

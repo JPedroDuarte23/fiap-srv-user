@@ -1,4 +1,4 @@
-﻿using FiapCloudGames.Infrastructure.Configuration;
+﻿using FiapSrvUser.Infrastructure.Configuration;
 using Microsoft.AspNetCore.DataProtection;
 using MongoDB.Driver;
 using Serilog;
@@ -43,7 +43,7 @@ if (!builder.Environment.IsDevelopment())
     );
 
     builder.Services.AddDataProtection()
-        .SetApplicationName("FiapCloudGames")
+        .SetApplicationName("FiapSrvUser")
         .PersistKeysToAzureBlobStorage(new Uri(blobUrl), managedCredential)
         .ProtectKeysWithAzureKeyVault(new Uri(keyVaultUrl + "keys/" + keyName), managedCredential);
 
@@ -95,7 +95,6 @@ builder.Services.AddSwaggerGen(opt =>
  {
      opt.SwaggerDoc("v1", new OpenApiInfo { Title = "FIAP Cloud Games User API", Version = "v1" });
 
-     /*
      opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
      {
          Name = "Authorization",
@@ -120,9 +119,6 @@ builder.Services.AddSwaggerGen(opt =>
             Array.Empty<string>()
         }
     });
-     */
-
-     opt.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "FiapSrvUser.API.xml"));
  });
 
 

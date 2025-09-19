@@ -1,7 +1,7 @@
 ﻿
 using System.Diagnostics.CodeAnalysis;
 
-namespace FiapCloudGames.Infrastructure.Configuration;
+namespace FiapSrvUser.Infrastructure.Configuration;
 
 [ExcludeFromCodeCoverage]
 public class MongoDbSettings

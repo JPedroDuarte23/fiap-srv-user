@@ -25,6 +25,7 @@ builder.Host.UseSerilog();
 // 1. Configuração da AWS
 builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 builder.Services.AddAWSService<IAmazonSimpleSystemsManagement>();
+builder.Services.AddAWSService<Amazon.S3.IAmazonS3>(); 
 
 string mongoConnectionString;
 string jwtSigningKey;

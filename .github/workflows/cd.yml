@@ -19,13 +19,13 @@ jobs:
         run: echo "$DOCKER_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
       - name: Build Docker image
-        run: docker build --platform linux/amd64  -t $DOCKER_USERNAME/fiap-srv-payment:${{ github.sha }} .
+        run: docker build --platform linux/amd64  -t $DOCKER_USERNAME/fiap-srv-user:${{ github.sha }} .
 
       - name: Push Docker image
         run: |
-          docker push $DOCKER_USERNAME/fiap-srv-payment:${{ github.sha }}
-          docker tag $DOCKER_USERNAME/fiap-srv-payment:${{ github.sha }} $DOCKER_USERNAME/fiap-srv-payment:latest
-          docker push $DOCKER_USERNAME/fiap-srv-payment:latest
+          docker push $DOCKER_USERNAME/fiap-srv-user:${{ github.sha }}
+          docker tag $DOCKER_USERNAME/fiap-srv-user:${{ github.sha }} $DOCKER_USERNAME/fiap-srv-user:latest
+          docker push $DOCKER_USERNAME/fiap-srv-user:latest
 
       - name: Finalizado
         run: echo "Imagem publicada no Docker Hub com sucesso!"

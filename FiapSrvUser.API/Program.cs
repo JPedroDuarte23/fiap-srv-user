@@ -14,6 +14,7 @@ using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
 using Serilog;
 using System.Diagnostics.CodeAnalysis;
+using Prometheus;
 
 [assembly: ExcludeFromCodeCoverage]
 
@@ -122,11 +123,19 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
 app.UseMiddleware<CorrelationIdMiddleware>();
 app.UseMiddleware<ExceptionHandler>();
+
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
+app.UseHttpMetrics();
+
+app.MapMetrics();
 app.MapControllers();
+
 app.Run();
